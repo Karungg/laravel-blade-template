@@ -11,7 +11,7 @@ class IfStatementTest extends TestCase
     public function TestIfStatement()
     {
         $this->view('if', [])
-            ->assertSeeText("I dont have any hobby!");
+            ->assertSeeText("I dont have any hobby!", false);
 
         $this->view('if', ['hobbies'    => "Coding"])
             ->assertSeeText("I have one hobby!");
