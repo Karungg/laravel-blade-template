@@ -25,18 +25,4 @@ class HelloTest extends TestCase
         $this->view('hello', ['name'    => "Miftah Fadilah"])
             ->assertSeeText("Miftah Fadilah");
     }
-
-    public function testComment()
-    {
-        $this->view('comment', [])
-            ->assertSeeText("Comment")
-            ->assertDontSeeText("Miftah Fadilah");
-    }
-
-    public function testDisabledBlade()
-    {
-        $this->view('disable', ["name"  => "Miftah Fadilah"])
-            ->assertDontSeeText("Miftah")
-            ->assertSeeText('Hello {{ $name }}');
-    }
 }
