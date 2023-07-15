@@ -32,4 +32,11 @@ class HelloTest extends TestCase
             ->assertSeeText("Comment")
             ->assertDontSeeText("Miftah Fadilah");
     }
+
+    public function testDisabledBlade()
+    {
+        $this->view('disable', ["name"  => "Miftah Fadilah"])
+            ->assertDontSeeText("Miftah")
+            ->assertSeeText('Hello {{ $name }}');
+    }
 }
