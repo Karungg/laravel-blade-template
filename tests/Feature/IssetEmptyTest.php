@@ -18,7 +18,7 @@ class IssetEmptyTest extends TestCase
             ->assertSeeText("Hello my name is Miftah Fadilah", false)
             ->assertSeeText("I dont have any hobby", false);
 
-        $this->view('issetempty', ['name'   => "Syalwa", 'hobbies'  => "Gaming"])
+        $this->view('issetempty', ['name'   => "Syalwa", 'hobbies'  => ["Gaming"]])
             ->assertSeeText("Hello my name is Syalwa", false)
             ->assertDontSeeText("I dont have any hobby", false);
     }
